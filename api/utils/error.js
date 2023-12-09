@@ -6,4 +6,4 @@ export const errorHandler = (statusCode, message) => {
     return error;
 }
 
-/* Custom error */
+/* This is costome error..!*/
