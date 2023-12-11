@@ -6,7 +6,7 @@ import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSli
 
 export default function SignIn() {
   const [formData, setFromData] = useState({}); //This state is for tracking what type in input field.
-  const { loaidng, error } = useSelector((state) => state.user);
+  const { loading, error } = useSelector((state) => state.user)|| { loading: false, error: null}
   const navigate = useNavigate();
   const dispatch = useDispatch();
   // HandleChange is tracking function..!
@@ -49,7 +49,7 @@ export default function SignIn() {
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input type="email" placeholder='email'  className='border p-3 rounded-lg' id='email' onChange={handleChange} />
         <input type="password" placeholder='password'  className='border p-3 rounded-lg' id='password' onChange={handleChange} />
-        <button disabled={loaidng} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>{loaidng? 'Loading...' : 'Sign In'}</button>
+        <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>{loading? 'Loading...' : 'Sign In'}</button>
       </form>
       <div className='flex gap-2 mt-5'>
         <p>Do not have an account?</p>
