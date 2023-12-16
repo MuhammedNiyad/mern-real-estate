@@ -7,7 +7,7 @@ import OAuth from '../components/Oauth';
 
 export default function SignIn() {
   const [formData, setFromData] = useState({}); //This state is for tracking what type in input field.
-  const { loading, error } = useSelector((state) => state.user)|| { loading: false, error: null}
+  const { loading, error } = useSelector((state) => state.user)
   const navigate = useNavigate();
   const dispatch = useDispatch();
   // HandleChange is tracking function..!
